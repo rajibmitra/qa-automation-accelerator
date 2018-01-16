@@ -12,7 +12,7 @@ pipeline {
     }
 	stages {
 
-        	}
+        	
 			stage('Test environment availability') {
             		steps {
                 		sh "./gradlew clean test -Denv.mode=${params.MODE} -Denv.urlPrefix=${params.TARGET} -Denv.browser=${params.BROWSER} -Denv.threadCount=1 -Dcucumber.options=\"--tags @sitecheck\""
@@ -36,7 +36,7 @@ pipeline {
             		notifyBuild(currentBuild.result)
         	}
 
-	}
+	
 }
 
 def notifyBuild(String buildStatus = 'STARTED') {
