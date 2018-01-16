@@ -11,10 +11,7 @@ pipeline {
 		buildDiscarder(logRotator(numToKeepStr: '10'))
     }
 	stages {
-			stage('Clean Workspace') {
-        			steps {
-        				sh "./gradlew clean"
-        			}
+
         	}
 			stage('Test environment availability') {
             		steps {
